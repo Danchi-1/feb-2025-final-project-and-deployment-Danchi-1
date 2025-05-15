@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarks - BlogSphere</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.twind.style" crossorigin></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>BlogSphere</h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" id="closeMenu"></i>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="explore.html"><i class="fas fa-compass"></i> Explore</a></li>
+                    <li><a href="create.html"><i class="fas fa-pen-to-square"></i> Write</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="bookmarks.html" class="active"><i class="fas fa-bookmark"></i> Bookmarks</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" id="openMenu"></i>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bookmarks-header">
+            <h1>Your Bookmarks</h1>
+            <div class="bookmarks-actions">
+                <div class="search-container">
+                    <input type="text" id="searchBookmarks" placeholder="Search bookmarks...">
+                    <button id="searchBookmarksBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-dropdown">
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i> Filter
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-dropdown-content">
+                        <a href="#" data-filter="all">All Bookmarks</a>
+                        <a href="#" data-filter="recent">Recently Added</a>
+                        <a href="#" data-filter="technology">Technology</a>
+                        <a href="#" data-filter="travel">Travel</a>
+                        <a href="#" data-filter="food">Food</a>
+                        <a href="#" data-filter="lifestyle">Lifestyle</a>
+                        <a href="#" data-filter="health">Health</a>
+                        <a href="#" data-filter="business">Business</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bookmarks-section">
+            <div class="posts-container" id="bookmarkedPosts">
+                <!-- Bookmarked posts will be loaded here via JavaScript -->
+                <div class="loading">Loading bookmarks...</div>
+            </div>
+        </section>
+
+        <div class="no-bookmarks" id="noBookmarks" style="display: none;">
+            <div class="empty-state">
+                <i class="fas fa-bookmark empty-icon"></i>
+                <h2>No bookmarks yet</h2>
+                <p>Save interesting posts to read later by clicking the bookmark icon.</p>
+                <a href="explore.html" class="btn primary-btn">Explore Posts</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About BlogSphere</h2>
+                <p>A platform for writers and readers to connect, share ideas, and explore new perspectives.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="create.html">Write</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-envelope"></i> contact@blogsphere.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 BlogSphere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

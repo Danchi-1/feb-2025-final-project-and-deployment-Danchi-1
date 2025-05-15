@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - BlogSphere</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.twind.style" crossorigin></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>BlogSphere</h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" id="closeMenu"></i>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="explore.html"><i class="fas fa-compass"></i> Explore</a></li>
+                    <li><a href="create.html"><i class="fas fa-pen-to-square"></i> Write</a></li>
+                    <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="bookmarks.html"><i class="fas fa-bookmark"></i> Bookmarks</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" id="openMenu"></i>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-header">
+            <div class="profile-cover">
+                <div class="edit-cover">
+                    <button class="edit-btn"><i class="fas fa-camera"></i></button>
+                </div>
+            </div>
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <img src="https://via.placeholder.com/150" alt="Profile Avatar" id="profileAvatar">
+                    <div class="edit-avatar">
+                        <button class="edit-btn"><i class="fas fa-camera"></i></button>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <h1 id="profileName">John Doe</h1>
+                    <p class="profile-bio" id="profileBio">Passionate writer and tech enthusiast. I love sharing my thoughts on the latest technology trends and innovations.</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="postsCount">24</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="followersCount">1.2k</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="followingCount">384</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn primary-btn" id="editProfileBtn">Edit Profile</button>
+                        <button class="btn secondary-btn" id="shareProfileBtn"><i class="fas fa-share-alt"></i> Share</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-content">
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="posts">My Posts</button>
+                <button class="tab-btn" data-tab="drafts">Drafts</button>
+                <button class="tab-btn" data-tab="liked">Liked Posts</button>
+                <button class="tab-btn" data-tab="comments">Comments</button>
+            </div>
+
+            <div class="tab-content active" id="postsTab">
+                <div class="posts-container" id="userPosts">
+                    <!-- User posts will be loaded here via JavaScript -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="draftsTab">
+                <div class="posts-container" id="userDrafts">
+                    <!-- User drafts will be loaded here via JavaScript -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="likedTab">
+                <div class="posts-container" id="userLiked">
+                    <!-- Liked posts will be loaded here via JavaScript -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="commentsTab">
+                <div class="comments-container" id="userComments">
+                    <!-- User comments will be loaded here via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Edit Profile Modal -->
+        <div class="modal" id="editProfileModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Edit Profile</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <div class="form-group">
+                            <label for="editName">Name</label>
+                            <input type="text" id="editName" value="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="editBio">Bio</label>
+                            <textarea id="editBio" rows="3">Passionate writer and tech enthusiast. I love sharing my thoughts on the latest technology trends and innovations.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmail">Email</label>
+                            <input type="email" id="editEmail" value="john.doe@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="editWebsite">Website</label>
+                            <input type="url" id="editWebsite" value="https://johndoe.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Social Media</label>
+                            <div class="social-input">
+                                <i class="fab fa-twitter"></i>
+                                <input type="text" id="editTwitter" placeholder="Twitter username">
+                            </div>
+                            <div class="social-input">
+                                <i class="fab fa-instagram"></i>
+                                <input type="text" id="editInstagram" placeholder="Instagram username">
+                            </div>
+                            <div class="social-input">
+                                <i class="fab fa-linkedin"></i>
+                                <input type="text" id="editLinkedin" placeholder="LinkedIn profile URL">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn secondary-btn" id="cancelEditBtn">Cancel</button>
+                            <button type="submit" class="btn primary-btn">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About BlogSphere</h2>
+                <p>A platform for writers and readers to connect, share ideas, and explore new perspectives.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="create.html">Write</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-envelope"></i> contact@blogsphere.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 BlogSphere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

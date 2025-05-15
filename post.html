@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - BlogSphere</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.twind.style" crossorigin></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>BlogSphere</h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" id="closeMenu"></i>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="explore.html"><i class="fas fa-compass"></i> Explore</a></li>
+                    <li><a href="create.html"><i class="fas fa-pen-to-square"></i> Write</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="bookmarks.html"><i class="fas fa-bookmark"></i> Bookmarks</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" id="openMenu"></i>
+        </nav>
+    </header>
+
+    <main class="post-page">
+        <article class="blog-post" id="blogPost">
+            <!-- Post content will be loaded here via JavaScript -->
+            <div class="loading">Loading post...</div>
+        </article>
+
+        <section class="post-actions">
+            <div class="action-buttons">
+                <button class="action-btn like-btn" id="likeBtn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count" id="likeCount">0</span>
+                </button>
+                <button class="action-btn comment-btn" id="commentBtn">
+                    <i class="far fa-comment"></i>
+                    <span class="comment-count" id="commentCount">0</span>
+                </button>
+                <button class="action-btn bookmark-btn" id="bookmarkBtn">
+                    <i class="far fa-bookmark"></i>
+                </button>
+                <button class="action-btn share-btn" id="shareBtn">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="author-section">
+            <div class="author-card">
+                <div class="author-info">
+                    <img src="https://via.placeholder.com/50" alt="Author Avatar" class="author-avatar" id="authorAvatar">
+                    <div class="author-details">
+                        <h3 class="author-name" id="authorName">Author Name</h3>
+                        <p class="author-bio" id="authorBio">Short author bio goes here...</p>
+                    </div>
+                </div>
+                <button class="btn primary-btn follow-btn" id="followBtn">Follow</button>
+            </div>
+        </section>
+
+        <section class="comments-section">
+            <h2>Comments (<span id="totalComments">0</span>)</h2>
+            <div class="comment-form">
+                <img src="https://via.placeholder.com/40" alt="User Avatar" class="user-avatar">
+                <div class="comment-input-container">
+                    <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+                    <button class="btn primary-btn" id="submitComment">Post</button>
+                </div>
+            </div>
+            <div class="comments-container" id="commentsContainer">
+                <!-- Comments will be loaded here via JavaScript -->
+            </div>
+        </section>
+
+        <section class="related-posts">
+            <h2>Related Posts</h2>
+            <div class="posts-container" id="relatedPosts">
+                <!-- Related posts will be loaded here via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Share Modal -->
+        <div class="modal" id="shareModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Share This Post</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="share-options">
+                        <a href="#" class="share-option facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="share-option twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="share-option linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="share-option whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                    <div class="share-link">
+                        <input type="text" id="shareLink" readonly>
+                        <button class="btn secondary-btn" id="copyLink">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About BlogSphere</h2>
+                <p>A platform for writers and readers to connect, share ideas, and explore new perspectives.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="create.html">Write</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-envelope"></i> contact@blogsphere.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 BlogSphere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
